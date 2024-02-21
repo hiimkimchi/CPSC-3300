@@ -223,4 +223,10 @@ FROM CONCERT C
 LEFT JOIN REVIEW R ON C.ConcertID = R.ConcertID
 WHERE R.ReviewID IS NULL;
 
+-- Calculate total concerts for each venue
+SELECT V.VenueID, V.VenueAddress, COUNT(C.ConcertID) AS TotalConcerts
+FROM VENUE V
+JOIN CONCERT C ON V.VenueID = C.VenueID
+GROUP BY V.VenueID, V.VenueAddress;
+
 DROP DATABASE QUARTERPROJECT;
