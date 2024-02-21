@@ -93,4 +93,17 @@ CREATE TABLE REVIEW(
 	PRIMARY KEY(ReviewID, UserID, ConcertID)
 );
 
+
+INSERT INTO USERS(UserID, UserName, UserEmail, UserFirstName, UserLastName) VALUES
+	('0870542682', 'badevera04', 'bdevera@seattleu.edu', 'Benjamin', 'de Vera'),
+    ('0647611212', 'jomi.kale', 'jruiz@seattleu.edu', 'Jomi', 'Ruiz'),
+    ('4251517163', 'bryankimchi', 'bkim@seattleu.edu', 'Bryan', 'Kim'),
+    ('7986050844', 'rykei.luo', 'rluo@seattleu.edu', 'Ryan', 'Luo'),
+    ('6268250151', 'ethan.barroga', 'ebarroga@seattleu.edu', 'Ethan', 'Barroga'),
+    ('2064701516', 'skyetensai', 'swong@seattleu.edu', 'Skyelar', 'Wong'),
+    ('7517385182', 'darylnserquinia', 'dserquinia@seattleu.edu', 'Daryl', 'Serquinia'),
+    ('7608001500', 'spaghemiily', 'etrinh@seattleu.edu', 'Emily', 'Trinh'),
+    ('8517090341', 'brnt_pj', 'vnguyenpham@seattleu.edu', 'Vinh', 'Nguyenpham'),
+    ('0209657080', 'ari_tumba', 'atumbagahan@uw.edu', 'Ari', 'Tumbagahan');
+
 DROP DATABASE QUARTERPROJECT;
