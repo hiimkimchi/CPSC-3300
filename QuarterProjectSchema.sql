@@ -1,5 +1,5 @@
 -- Ben deVera, Bryan Kim, Ryan Luo, Jomi Ruiz, 
--- Milestone 4
+-- Milestone 3
 
 CREATE DATABASE QUARTERPROJECT;
 
