@@ -199,4 +199,16 @@ INSERT INTO CONCERT(ConcertID, VenueID, MediaID, PerformerID, FestivalID, Concer
 	('71D5D43B33','B096FD5939','M000000010','JJI2523212', NULL,'Live Band','Pop','2024-10-15 03:00:00'),
 	('4FA4A4491E','49E92EBB8C','M000000006','KSHI192023', NULL,'Solo','RnB','2024-04-11 07:00:00');
 
+INSERT INTO REVIEW(ReviewID, UserID, ConcertID, ReviewParagraph, ReviewScore) VALUES
+	('R000000001', '0870542682', 'D08F897678', 'jib', 2),
+    ('R000000002', '7517385182', 'B16892A3C6', 'jibber', 5),
+    ('R000000003', '8517090341', 'D4DB214AD3', 'jabber', 6),
+    ('R000000004', '0209657080', '4FA4A4491E', 'jibber jabber', 10),
+    ('R000000005', '4251517163', 'E1C897D10E', 'but id rather', 8),
+    ('R000000006', '7986050844', 'D08F897678', 'get pasty', 7),
+    ('R000000007', '0870542682', 'B45B08F2F7', 'like marshall mathers', 6),
+    ('R000000008', '7517385182', 'B16892A3C6', 'Uno Reverse', 1),
+    ('R000000009', '6268250151', 'B45B08F2F7', 'Im the Kid', 3),
+    ('R000000010', '0870542682', '229C0846DB', 'But youre a pastor', 6);
+
 DROP DATABASE QUARTERPROJECT;
