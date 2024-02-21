@@ -16,8 +16,6 @@ CREATE TABLE VENUE(
 	VenueAddress VARCHAR(100) NOT NULL,
 	VenueZipCode INT NOT NULL,
 	VenuePhoneNumber VARCHAR(11) NOT NULL,
-	VenueOwnerFirstName VARCHAR(20) NOT NULL,
-	VenueOwnerLastName VARCHAR(20) NOT NULL,
 	PRIMARY KEY(VenueID)
 );
 
@@ -105,6 +103,18 @@ INSERT INTO USERS(UserID, UserName, UserEmail, UserFirstName, UserLastName) VALU
 	('7608001500', 'spaghemiily', 'etrinh@seattleu.edu', 'Emily', 'Trinh'),
 	('8517090341', 'brnt_pj', 'vnguyenpham@seattleu.edu', 'Vinh', 'Nguyenpham'),
 	('0209657080', 'ari_tumba', 'atumbagahan@uw.edu', 'Ari', 'Tumbagahan');
+
+INSERT INTO VENUE(VenueID, VenueAddress, VenueZipCode, VenuePhoneNumber) VALUES
+	('SHOWBOXDT','1426 1st Ave.', 98101,'2066283151'),
+	('SHOWBOXSD','1700 1st Ave. South', 98134, '2066520997'),
+	('WAMU','800 Occidental Ave. South', 98134, '2063817848'),
+	('LUMEN','800 Occidental Ave. South', 98134, '2063817555'),
+	('CLIPLEDGE','1st Ave. North', 98109, '2067527200'),
+	('HANGAR30','6310 NE 74th St', 98115,'2062337892'),
+	('TRINITY','107 Occidental Ave South', 98104, '2066977702'),
+	('THEGORGE','754 Silica Rd NW', 98848,'2066073440'),
+	('NUEMOS','925 E Pike St', 98122,'2067099467'),
+	('BARBOZA','925 E Pike St', 98122, '2067099442');
 
 INSERT INTO MEDIA (MediaID, MediaType, MediaLength, MediaOriginDate) VALUES
 	('M000000001', 'Audio', '01:33:06', '2023-05-01'),
