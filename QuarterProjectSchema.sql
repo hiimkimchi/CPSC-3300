@@ -128,7 +128,7 @@ INSERT INTO MEDIA (MediaID, MediaType, MediaLength, MediaOriginDate) VALUES
 	('M000000009', 'Video', '02:29:00', '2023-04-17'),
 	('M000000010', 'Video', '01:11:01', '2023-08-12');
 
-INSERT INTO PERFORMER(PerformerID, PerformerName, PerformerGenre, PerformerSetlist, PerformerType, PerformerStartTime) VALUES
+INSERT INTO PERFORMER(PerformerID, PerformerName, PerformerGenre, PerformerSetlist, PerformerType) VALUES
 	('A1B2C3D4E5', 'ILLENIUM', 'EDM', 'Trilogy', 'H'),
 	('A2B3C4D5E6', 'SLANDER', 'EDM', 'Thrive', 'S'),
 	('B2A1D4C3E5', 'LE SSERAFIM', 'KPOP', 'Unforgiven', 'H'),
