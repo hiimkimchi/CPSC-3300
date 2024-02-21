@@ -96,14 +96,26 @@ CREATE TABLE REVIEW(
 
 INSERT INTO USERS(UserID, UserName, UserEmail, UserFirstName, UserLastName) VALUES
 	('0870542682', 'badevera04', 'bdevera@seattleu.edu', 'Benjamin', 'de Vera'),
-    ('0647611212', 'jomi.kale', 'jruiz@seattleu.edu', 'Jomi', 'Ruiz'),
-    ('4251517163', 'bryankimchi', 'bkim@seattleu.edu', 'Bryan', 'Kim'),
-    ('7986050844', 'rykei.luo', 'rluo@seattleu.edu', 'Ryan', 'Luo'),
-    ('6268250151', 'ethan.barroga', 'ebarroga@seattleu.edu', 'Ethan', 'Barroga'),
-    ('2064701516', 'skyetensai', 'swong@seattleu.edu', 'Skyelar', 'Wong'),
-    ('7517385182', 'darylnserquinia', 'dserquinia@seattleu.edu', 'Daryl', 'Serquinia'),
-    ('7608001500', 'spaghemiily', 'etrinh@seattleu.edu', 'Emily', 'Trinh'),
-    ('8517090341', 'brnt_pj', 'vnguyenpham@seattleu.edu', 'Vinh', 'Nguyenpham'),
-    ('0209657080', 'ari_tumba', 'atumbagahan@uw.edu', 'Ari', 'Tumbagahan');
+	('0647611212', 'jomi.kale', 'jruiz@seattleu.edu', 'Jomi', 'Ruiz'),
+	('4251517163', 'bryankimchi', 'bkim@seattleu.edu', 'Bryan', 'Kim'),
+	('7986050844', 'rykei.luo', 'rluo@seattleu.edu', 'Ryan', 'Luo'),
+	('6268250151', 'ethan.barroga', 'ebarroga@seattleu.edu', 'Ethan', 'Barroga'),
+	('2064701516', 'skyetensai', 'swong@seattleu.edu', 'Skyelar', 'Wong'),
+	('7517385182', 'darylnserquinia', 'dserquinia@seattleu.edu', 'Daryl', 'Serquinia'),
+	('7608001500', 'spaghemiily', 'etrinh@seattleu.edu', 'Emily', 'Trinh'),
+	('8517090341', 'brnt_pj', 'vnguyenpham@seattleu.edu', 'Vinh', 'Nguyenpham'),
+	('0209657080', 'ari_tumba', 'atumbagahan@uw.edu', 'Ari', 'Tumbagahan');
+
+INSERT INTO MEDIA (MediaID, MediaType, MediaLength, MediaOriginDate) VALUES
+	('M000000001', 'Audio', '01:33:06', '2023-05-01'),
+	('M000000002', 'Audio', '01:27:17', '2023-05-10'),
+	('M000000003', 'Audio', '00:39:48', '2023-05-27'),
+	('M000000004', 'Audio', '02:03:35', '2023-07-05'),
+	('M000000005', 'Audio', '02:21:36', '2023-09-11'),
+	('M000000006', 'Video', '02:48:17', '2023-02-06'),
+	('M000000007', 'Video', '01:48:54', '2024-02-24'),
+	('M000000008', 'Video', '01:21:19', '2023-08-24'),
+	('M000000009', 'Video', '02:29:00', '2023-04-17'),
+	('M000000010', 'Video', '01:11:01', '2023-08-12');
 
 DROP DATABASE QUARTERPROJECT;
