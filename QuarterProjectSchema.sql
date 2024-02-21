@@ -211,4 +211,16 @@ INSERT INTO REVIEW(ReviewID, UserID, ConcertID, ReviewParagraph, ReviewScore) VA
     ('R000000009', '6268250151', 'B45B08F2F7', 'Im the Kid', 3),
     ('R000000010', '0870542682', '229C0846DB', 'But youre a pastor', 6);
 
+-- Find All reviews for a specific concert
+SELECT R.ReviewID, R.ReviewParagraph, R.ReviewScore, U.UserName, U.UserEmail
+FROM REVIEW R
+INNER JOIN USERS U ON R.UserID = U.UserID
+WHERE R.ConcertID = 'C1';
+
+-- Find concerts with no reviews
+SELECT C.ConcertID, C.ConcertType, C.ConcertGenre
+FROM CONCERT C
+LEFT JOIN REVIEW R ON C.ConcertID = R.ConcertID
+WHERE R.ReviewID IS NULL;
+
 DROP DATABASE QUARTERPROJECT;
