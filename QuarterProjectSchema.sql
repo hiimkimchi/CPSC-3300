@@ -229,6 +229,12 @@ FROM VENUE V
 JOIN CONCERT C ON V.VenueID = C.VenueID
 GROUP BY V.VenueID, V.VenueAddress;
 
+-- Find average score for one concert
+SELECT AVG(REVIEW.ReviewScore)
+FROM CONCERT 
+LEFT JOIN REVIEW ON CONCERT.ConcertID = REVIEW.ConcertID
+WHERE REVIEW.ReviewScore IS NOT NULL AND REVIEW.ConcertID = 'B16892A3C6';
+
 -- Delete a review from the REVIEW table
 DELETE FROM REVIEW WHERE ReviewID = 'R000000006';
 
