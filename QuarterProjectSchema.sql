@@ -214,7 +214,7 @@ INSERT INTO REVIEW(ReviewID, UserID, ConcertID, ReviewParagraph, ReviewScore) VA
 SELECT R.ReviewID, R.ReviewParagraph, R.ReviewScore, U.UserName, U.UserEmail
 FROM REVIEW R
 INNER JOIN USERS U ON R.UserID = U.UserID
-WHERE R.ConcertID = 'C1';
+WHERE R.ConcertID = 'D08F897678';
 
 -- Find concerts with no reviews
 SELECT C.ConcertID, C.ConcertType, C.ConcertGenre
