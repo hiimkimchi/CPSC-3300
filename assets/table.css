@@ -1,0 +1,72 @@
+/*-- -------------------------- -->
+<---           Table            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #table {
+      padding: var(--sectionPadding);
+    }
+    .container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    .content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .th {
+      padding: 0.75rem 1rem;
+      box-sizing: border-box;
+    }
+    .td {
+      padding: 0.5rem 1rem;
+      box-sizing: border-box;
+    }
+    .th,
+    .td {
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .color .th:first-child {
+        color: #fff;
+        background: rgb(194,115,255);
+        background: linear-gradient(243deg, rgba(194,115,255,1) 0%, rgba(153,104,221,1) 55%, rgba(108,33,210,1) 100%);
+    }
+    .th:first-child,
+    .td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 100;
+      /* Make sure it sits above the other cells */
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    .th {
+      background-color: #f2f2f2;
+    }
+    .tr {
+      color: var(--bodyTextColor);
+    }
+    .icon { 
+      height: 1rem;
+      width: auto;
+    }
+  }
+                                  
