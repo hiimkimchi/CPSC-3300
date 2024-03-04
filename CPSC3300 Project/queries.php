@@ -1,6 +1,6 @@
 <?php
 // Include database connection
-include('config/database.php');
+include('config/establish_connection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
