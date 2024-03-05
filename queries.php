@@ -114,7 +114,35 @@ if (isset($_GET['action'])) {
             }
             echo "</section></main>";
             break;
+        case 'rating_sort_greater_than_3':
+            echo "<main><section id='table' class='container'><h2>Concerts with Rating > 3</h2>";
+            $query = "SELECT ConcertID, ReviewID, AVG(ReviewScore)
+            FROM REVIEW
+            GROUP BY ConcertID, ReviewID
+            HAVING AVG(ReviewScore) > 3;";
 
+            $result = $conn->query($query);
+            echo $query;
+
+            if ($result) {
+                // Display the results
+                echo "<table border='3'>";
+                // Fetching data and displaying it in a table
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    foreach ($row as $value) {
+                        echo "<td>" . $value . "</td>";
+                    }
+                    echo "</tr>";
+                }
+                echo "</table>";
+            } else {
+                // Display error message if query execution fails
+                echo "No data found";
+                echo "Query Error: " . $conn->error;
+            }
+            echo "</section></main>";
+            break;
         default:
             echo "<main><section><p>Select a valid query to run.</p></section></main>";
             break;
