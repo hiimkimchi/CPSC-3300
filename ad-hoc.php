@@ -1,3 +1,6 @@
+// ad-hoc.php
+// Provides script for the ad-hoc queries to allow users to input their own queries
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +13,15 @@
 <body bgcolor="ffffff"> 
 <body?>
     <?php
+        // allows connection to be established already
         include('config/establish_connection.php');
+
+        // checks which method is used in the HTML page and returns the textbox entry
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             $inputQuery = $_POST["query"];
         }
 
+        // checks the box selections and inputs it into the inputQuery
         $prefix = $_POST["action"];
         switch($prefix) {
             case 'select':
@@ -33,13 +40,14 @@
 
         $inputQuery = $prefix . $inputQuery;
 
+        // executes query on server
         $returnVal = $conn->query($inputQuery);
 
+        // if the query result isnt empty, prints out the table properly
         if ($returnVal) {
-            // Display the results
             echo "<h2>Ad-hoc Query: </h2>";
             echo "<table border='3'>";
-            // Fetching data and displaying it in a table
+            // while loop to properly display table using HTML tags
             while ($row = $returnVal->fetch_assoc()) {
                 echo "<tr>";
                 foreach ($row as $value) {
@@ -49,7 +57,7 @@
             }
             echo "</table>";
         } else {
-            // Display error message if query execution fails
+            // error message for if query result is empty
             echo "No data found";
             echo "Query Error: " . $conn->error;
         }
