@@ -35,19 +35,37 @@
 
         $returnVal = $conn->query($inputQuery);
 
-        if ($returnVal) {
+        if ($returnVal && $returnVal->num_rows > 0) {
             // Display the results
             echo "<h2>Ad-hoc Query: </h2>";
-            echo "<table border='3'>";
-            // Fetching data and displaying it in a table
+            echo "<table class='table'>";
+            
+            // Fetch the first row to get column names for table headers
+            $firstRow = $returnVal->fetch_assoc();
+            
+            // Generate table headers
+            echo "<thead><tr class='color'>";
+            foreach ($firstRow as $column => $value) {
+                echo "<th class='th'>" . htmlspecialchars($column) . "</th>";
+            }
+            echo "</tr></thead><tbody>";
+            
+            // Output the first row
+            echo "<tr class='tr'>";
+            foreach ($firstRow as $value) {
+                echo "<td class='td'>" . htmlspecialchars($value) . "</td>";
+            }
+            echo "</tr>";
+
+            // Fetching the rest of the data and displaying it in table rows
             while ($row = $returnVal->fetch_assoc()) {
-                echo "<tr>";
+                echo "<tr class='tr'>";
                 foreach ($row as $value) {
-                    echo "<td>" . $value . "</td>";
+                    echo "<td class='td'>" . htmlspecialchars($value) . "</td>";
                 }
                 echo "</tr>";
             }
-            echo "</table>";
+            echo "</tbody></table>";
         } else {
             // Display error message if query execution fails
             echo "No data found";
