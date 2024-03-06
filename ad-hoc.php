@@ -44,7 +44,7 @@
         $returnVal = $conn->query($inputQuery);
 
         // if the query result isnt empty, prints out the table properly
-        if ($returnVal) {
+        if ($returnVal->num_rows > 0) {
             echo "<h2>Ad-hoc Query: </h2>";
             echo "<table border='3'>";
             // while loop to properly display table using HTML tags
