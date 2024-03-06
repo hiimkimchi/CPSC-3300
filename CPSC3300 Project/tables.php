@@ -13,8 +13,13 @@
     </header>
     <section id="media" class="container">
         <?php
-        include('config/establish_connection.php'); // Ensure this path is correct relative to this file's location
+        // tables.php
+        // Properly formats the tables and returns them to webpage
 
+        // establishes connection to database
+        include('config/establish_connection.php');
+
+        // determines which actions is pressed by the user
         if(isset($_GET['action'])) {
             $action = $_GET['action'];
 
@@ -23,6 +28,7 @@
                     // Execute SQL query to fetch data from USERS table
                     $result = $conn->query("SELECT * FROM USERS");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         // Generate HTML table
                         echo "<table class='table'>";
@@ -49,6 +55,7 @@
                     // Execute SQL query to fetch data from VENUE table
                     $result = $conn->query("SELECT * FROM VENUE");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         echo "<table class='table'>";
                         echo "<thead><tr class='color'><th class='th'>Venue ID</th><th class='th'>Venue Name</th><th class='th'>Venue Address</th><th class='th'>Venue Zip Code</th><th class='th'>Venue Phone Number</th></tr></thead><tbody>";
@@ -65,6 +72,7 @@
                     // Execute SQL query to fetch data from MEDIA table
                     $result = $conn->query("SELECT * FROM MEDIA");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         // Generate HTML table for MEDIA
                         echo "<table class='table'>";
@@ -90,6 +98,7 @@
                     // Execute SQL query to fetch data from PERFORMER table
                     $result = $conn->query("SELECT * FROM PERFORMER");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         // Generate HTML table for PERFORMER
                         echo "<table class='table'>";
@@ -116,6 +125,7 @@
                     // Execute SQL query to fetch data from HEADLINER table
                     $result = $conn->query("SELECT * FROM HEADLINER");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         // Generate HTML table for HEADLINER
                         echo "<table class='table'>";
@@ -137,8 +147,10 @@
                     break;
 
                 case 'supporter':
+                    // Execute SQL query to fetch data from SUPPORTER table
                     $result = $conn->query("SELECT * FROM SUPPORTER");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         echo "<table class='table'>";
                         echo "<thead><tr class='color'><th class='th'>Performer ID</th><th class='th'>Supporter Requests</th></tr></thead><tbody>";
@@ -152,8 +164,10 @@
                     break;
                 
                 case 'festival':
+                    // Execute SQL query to fetch data from FESTIVAL table
                     $result = $conn->query("SELECT * FROM FESTIVAL");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         echo "<table class='table'>";
                         echo "<thead><tr class='color'><th class='th'>Festival ID</th><th class='th'>Venue ID</th><th class='th'>Performer ID</th><th class='th'>Festival Start</th><th class='th'>Festival End</th><th class='th'>Festival Description</th></tr></thead><tbody>";
@@ -167,8 +181,10 @@
                     break;
 
                 case 'concert':
+                    // Execute SQL query to fetch data from CONCERT table
                     $result = $conn->query("SELECT * FROM CONCERT");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         echo "<table class='table'>";
                         echo "<thead><tr class='color'><th class='th'>Concert ID</th><th class='th'>Venue ID</th><th class='th'>Media ID</th><th class='th'>Performer ID</th><th class='th'>Festival ID</th><th class='th'>Concert Type</th><th class='th'>Concert Genre</th><th class='th'>Concert Start Time</th></tr></thead><tbody>";
@@ -182,8 +198,10 @@
                     break;
 
                 case 'review':
+                    // Execute SQL query to fetch data from REVIEW table
                     $result = $conn->query("SELECT * FROM REVIEW");
 
+                    // displays result based on the return value of query
                     if ($result->num_rows > 0) {
                         echo "<table class='table'>";
                         echo "<thead><tr class='color'><th class='th'>Review ID</th><th class='th'>UserID</th><th class='th'>Concert ID</th><th class='th'>Review Paragraph</th><th class='th'>Review Score</th></tr></thead><tbody>";
