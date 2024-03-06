@@ -124,14 +124,17 @@ if (isset($_GET['action'])) {
             $result = $conn->query($query);
         
             if ($result && $result->num_rows > 0) {
-                echo "<div class='content'><table border='1'>";
-                echo "<tr><th>Concert ID</th><th>Review ID</th><th>Average Score</th></tr>";
-                // Fetching data and displaying it in a table
+                echo "<div class='content'><table class='table'>";
+                echo "<thead>";
+                echo "<tr class='color'><th class='th'>Concert ID</th><th class='th'>Review ID</th><th class='th'>Average Score</th></tr>";
+                echo "</thead>";
+                echo "<tbody>";
+                // Fetching data and displaying it in a table with class attributes
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row['ConcertID'] . "</td>";
-                    echo "<td>" . $row['ReviewID'] . "</td>";
-                    echo "<td>" . round($row['AverageScore'], 2) . "</td>";
+                    echo "<tr class='tr'>";
+                    echo "<td class='td'>" . htmlspecialchars($row['ConcertID']) . "</td>";
+                    echo "<td class='td'>" . htmlspecialchars($row['ReviewID']) . "</td>";
+                    echo "<td class='td'>" . htmlspecialchars(round($row['AverageScore'], 2)) . "</td>";
                     echo "</tr>";
                 }
                 echo "</table></div>";
@@ -139,10 +142,10 @@ if (isset($_GET['action'])) {
                 // Display error message if query execution fails or no data found
                 echo "<div class='content'><p>No data found.</p></div>";
                 if ($conn->error) {
-                    echo "<p>Query Error: " . $conn->error . "</p>";
+                    echo "<p>Query Error: " . htmlspecialchars($conn->error) . "</p>";
                 }
             }
-            echo "</section></main>";
+            echo "</section></main>";            
             break;
     }
 
